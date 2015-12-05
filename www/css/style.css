@@ -1,0 +1,16 @@
+/* Empty. Add your own CSS if you like */
+.completed.item p{
+	color: #00BB00; 
+}
+
+.title{
+	float: left;
+}
+
+.created-at{
+	float: right;
+}
+
+.item-icon-right .icon {
+    font-size: 1.2em;
+}

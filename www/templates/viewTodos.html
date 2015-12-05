@@ -1,0 +1,19 @@
+<ion-view title="View Todos">
+    <ion-content padding="'true'" class="has-header">
+        <div class="list">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" ng-model="query" placeholder="Search">
+            </label>
+        </div>
+        <ion-list>
+            <ion-item class="item item-icon-right" ng-class="{'completed':todo.isCompleted}" ng-repeat="todo in todos | filter:{title: query} | orderBy: 'createdAt' track by $index" >
+                <i class="icon ion-chevron-left "></i>
+                <p class="title item-text-wrap">{{todo.title}}</p>
+                <p class="created-at ">{{todo.createdAt | fromNow}}</p>                
+                <ion-option-button class="button-energized " ng-click="editTodo($index)">Edit</ion-option-button>
+                <ion-option-button class="button-assertive " ng-click="deleteTodo($index)">Delete</ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
